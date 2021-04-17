@@ -1,0 +1,15 @@
+<%- await include('templates/header.ejs') %>
+
+<h1> Consultas </h1>
+<h2> Filtrar por programa </h2>
+<form action="/estudiantes" method="get">
+	<select name="programa">
+		<% for (const programa of programas) { %>
+		<option value="<%= programa.id %>"> <%= programa.nombre %> </option>
+		<% } %>
+	</select>
+	<button type=submit>Filtrar</button>
+
+</form>
+
+<%- await include('templates/footer.ejs') %>
